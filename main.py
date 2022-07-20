@@ -31,6 +31,9 @@ def signUp(username, password):
     f = open("database.txt", "a")
     f.write("".join(new_user_list))
 
+    successText = Label(window, text="You have now created a new account!")
+    successText.place(x=280, y=100)
+
 def loginSetup():
     userText = Label(window, text="Username:")
     userText.place(x=225, y=130)
@@ -69,7 +72,7 @@ def signupSetup():
     backButton = Button(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
     backButton.place(x=25, y=404)
 
-    enterButton = Button(window, text="Enter", width=10, command=lambda: [signUp(userBox.get(), passBox.get())])
+    enterButton = Button(window, text="Enter", width=10, command=lambda: [signUp(userBox.get(), passBox.get()), userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
     enterButton.place(x=225, y=225)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
