@@ -16,47 +16,47 @@ def printit(input1, input2):
 
 def loginSetup():
     userText = Label(window, text="Username:")
-    userText.place(x=160, y=80)
+    userText.place(x=225, y=130)
 
-    userBox = Entry(window, width=30)
-    userBox.place(x=160, y=100)
+    userBox = Entry(window, width=50)
+    userBox.place(x=225, y=150)
 
     passText = Label(window, text="Password:")
-    passText.place(x=160, y=130)
+    passText.place(x=225, y=180)
 
-    passBox = Entry(window, width=30, show="*")
-    passBox.place(x=160, y=150)
+    passBox = Entry(window, width=50, show="*")
+    passBox.place(x=225, y=200)
 
     backButton = Button(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
-    backButton.place(x=25, y=254)
+    backButton.place(x=25, y=404)
 
     enterButton = Button(window, text="Enter", width=10, command=lambda: [printit(userBox.get(), passBox.get())])
-    enterButton.place(x=160, y=175)
+    enterButton.place(x=225, y=225)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
-    exitButton.place(x=400, y=254)
+    exitButton.place(x=650, y=404)
 
 def signupSetup():
     userText = Label(window, text="Set a username:")
-    userText.place(x=160, y=80)
+    userText.place(x=225, y=130)
 
-    userBox = Entry(window, width=30)
-    userBox.place(x=160, y=100)
+    userBox = Entry(window, width=50)
+    userBox.place(x=225, y=150)
 
     passText = Label(window, text="Set a password:")
-    passText.place(x=160, y=130)
+    passText.place(x=225, y=180)
 
-    passBox = Entry(window, width=30, show="*")
-    passBox.place(x=160, y=150)
+    passBox = Entry(window, width=50, show="*")
+    passBox.place(x=225, y=200)
 
     backButton = Button(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
-    backButton.place(x=25, y=254)
+    backButton.place(x=25, y=404)
 
     enterButton = Button(window, text="Enter", width=10, command=lambda: [printit(userBox.get(), passBox.get())])
-    enterButton.place(x=160, y=175)
+    enterButton.place(x=225, y=225)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
-    exitButton.place(x=400, y=254)
+    exitButton.place(x=650, y=404)
 
 def menu():
     loginButton = Button(window, text="Login", width=10, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), loginSetup()])
