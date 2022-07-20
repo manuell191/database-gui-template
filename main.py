@@ -6,6 +6,10 @@ Each line is 25 pixels in height
 Each letter is 8 pixels in length
 '''
 
+database_dict = {
+    
+}
+
 def printit(input1, input2):
     print(input1)
     print(input2)
