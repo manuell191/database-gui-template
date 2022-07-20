@@ -8,7 +8,10 @@ Each letter is 8 pixels in length
 
 def account():
     changePassword = Button(text="Change Password", width=15)
-    changePassword.place(x=335, y=175)
+    changePassword.place(x=315, y=175)
+
+    logoutButton = Button(window, text="Log Out", width=10, command=lambda: [changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), menu()])
+    logoutButton.place(x=25, y=404)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
     exitButton.place(x=650, y=404)
@@ -42,8 +45,11 @@ def signUp(username, password):
     successText = Label(window, text="You have now created a new account!")
     successText.place(x=280, y=100)
 
-    continueButton = Button(window, text="Continue", width=10, command=lambda: [successText.destroy(), continueButton.destroy(), menu()])
+    continueButton = Button(window, text="Continue", width=10, command=lambda: [successText.destroy(), continueButton.destroy(), exitButton.destroy(), menu()])
     continueButton.place(x=335, y=175)
+
+    exitButton = Button(text="Exit", width=10, command=window.destroy)
+    exitButton.place(x=650, y=404)
 
 def loginSetup():
     userText = Label(window, text="Username:")
