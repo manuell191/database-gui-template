@@ -7,7 +7,7 @@ Each letter is 8 pixels in length
 '''
 
 database_dict = {
-    
+
 }
 
 def printit(input1, input2):
@@ -60,18 +60,18 @@ def signupSetup():
 
 def menu():
     loginButton = Button(window, text="Login", width=10, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), loginSetup()])
-    loginButton.place(x=145, y=100)
+    loginButton.place(x=240, y=175)
 
     signupButton = Button(window, text="Sign Up", width=10, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), signupSetup()])
-    signupButton.place(x=276, y=100)
+    signupButton.place(x=431, y=175)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
-    exitButton.place(x=210, y=254)
+    exitButton.place(x=335, y=404)
 
 
 window = Tk()
 
-window.geometry("500x300")
+window.geometry("750x450")
 
 window.title("Application Project")
 
