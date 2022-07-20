@@ -1,4 +1,5 @@
 from tkinter import *
+from customtkinter import *
 
 '''
 IMPORTANT ABOUT TKINTER:
@@ -106,7 +107,7 @@ def menu():
     exitButton.place(x=335, y=404)
 
 
-window = Tk()
+window = CTk()
 
 window.geometry("750x450")
 
