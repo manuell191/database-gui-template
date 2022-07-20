@@ -47,7 +47,7 @@ def account():
     changePassword = CTkButton(window, text="Change Password", width=120, command=lambda: [welcomeText.destroy(), changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), changePass1()])
     changePassword.place(x=315, y=175)
 
-    logoutButton = CTkButton(window, text="Log Out", width=80, command=lambda: [changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), menu()])
+    logoutButton = CTkButton(window, text="Log Out", width=80, command=lambda: [welcomeText.destroy(), changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), menu()])
     logoutButton.place(x=25, y=404)
 
     exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
