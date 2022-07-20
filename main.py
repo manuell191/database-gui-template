@@ -12,13 +12,13 @@ set_appearance_mode("dark")
 set_default_color_theme("dark-blue")
 
 def account():
-    changePassword = CTkButton(text="Change Password", width=15)
+    changePassword = CTkButton(text="Change Password", width=120)
     changePassword.place(x=315, y=175)
 
-    logoutButton = CTkButton(window, text="Log Out", width=10, command=lambda: [changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), menu()])
+    logoutButton = CTkButton(window, text="Log Out", width=80, command=lambda: [changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), menu()])
     logoutButton.place(x=25, y=404)
 
-    exitButton = CTkButton(text="Exit", width=10, command=window.destroy)
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
     exitButton.place(x=650, y=404)
 
 def login(username, password):
@@ -50,64 +50,64 @@ def signUp(username, password):
     successText = CTkLabel(window, text="You have now created a new account!")
     successText.place(x=280, y=100)
 
-    continueButton = CTkButton(window, text="Continue", width=10, command=lambda: [successText.destroy(), continueButton.destroy(), exitButton.destroy(), menu()])
+    continueButton = CTkButton(window, text="Continue", width=80, command=lambda: [successText.destroy(), continueButton.destroy(), exitButton.destroy(), menu()])
     continueButton.place(x=335, y=175)
 
-    exitButton = CTkButton(text="Exit", width=10, command=window.destroy)
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
     exitButton.place(x=650, y=404)
 
 def loginSetup():
     userText = CTkLabel(window, text="Username:")
-    userText.place(x=225, y=130)
+    userText.place(x=190, y=100)
 
-    userBox = CTkEntry(window, width=50)
-    userBox.place(x=225, y=150)
+    userBox = CTkEntry(window, width=300)
+    userBox.place(x=225, y=125)
 
     passText = CTkLabel(window, text="Password:")
-    passText.place(x=225, y=180)
+    passText.place(x=190, y=175)
 
-    passBox = CTkEntry(window, width=50, show="*")
+    passBox = CTkEntry(window, width=300, show="*")
     passBox.place(x=225, y=200)
 
-    backButton = CTkButton(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
+    backButton = CTkButton(window, text="Back", width=80, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
     backButton.place(x=25, y=404)
 
-    enterButton = CTkButton(window, text="Enter", width=10, command=lambda: [login(userBox.get(), passBox.get()), userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy()])
-    enterButton.place(x=225, y=225)
+    enterButton = CTkButton(window, text="Enter", width=80, command=lambda: [login(userBox.get(), passBox.get()), userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy()])
+    enterButton.place(x=225, y=250)
 
-    exitButton = CTkButton(text="Exit", width=10, command=window.destroy)
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
     exitButton.place(x=650, y=404)
 
 def signupSetup():
     userText = CTkLabel(window, text="Set a username:")
-    userText.place(x=225, y=130)
+    userText.place(x=205, y=100)
 
-    userBox = CTkEntry(window, width=50)
-    userBox.place(x=225, y=150)
+    userBox = CTkEntry(window, width=300)
+    userBox.place(x=225, y=125)
 
     passText = CTkLabel(window, text="Set a password:")
-    passText.place(x=225, y=180)
+    passText.place(x=205, y=175)
 
-    passBox = CTkEntry(window, width=50, show="*")
+    passBox = CTkEntry(window, width=300, show="*")
     passBox.place(x=225, y=200)
 
-    backButton = CTkButton(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
+    backButton = CTkButton(window, text="Back", width=80, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
     backButton.place(x=25, y=404)
 
-    enterButton = CTkButton(window, text="Enter", width=10, command=lambda: [signUp(userBox.get(), passBox.get()), userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy()])
-    enterButton.place(x=225, y=225)
+    enterButton = CTkButton(window, text="Enter", width=80, command=lambda: [signUp(userBox.get(), passBox.get()), userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy()])
+    enterButton.place(x=225, y=250)
 
-    exitButton = CTkButton(text="Exit", width=10, command=window.destroy)
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
     exitButton.place(x=650, y=404)
 
 def menu():
-    loginButton = CTkButton(window, text="Login", width=10, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), loginSetup()])
+    loginButton = CTkButton(window, text="Login", width=80, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), loginSetup()])
     loginButton.place(x=240, y=175)
 
-    signupButton = CTkButton(window, text="Sign Up", width=10, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), signupSetup()])
+    signupButton = CTkButton(window, text="Sign Up", width=80, command=lambda: [loginButton.destroy(), signupButton.destroy(), exitButton.destroy(), signupSetup()])
     signupButton.place(x=431, y=175)
 
-    exitButton = CTkButton(text="Exit", width=10, command=window.destroy)
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
     exitButton.place(x=335, y=404)
 
 
