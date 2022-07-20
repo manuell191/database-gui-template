@@ -13,10 +13,16 @@ set_default_color_theme("dark-blue")
 
 def changePass1():
     passTxt = CTkLabel(window, text="Enter your password to verify it's you")
-    passTxt.place(x=200, y=50)
+    passTxt.place(x=270, y=100)
 
     checkPass = CTkEntry(window, width=300)
-    checkPass.place(x=225, y=125)
+    checkPass.place(x=225, y=150)
+
+    backButton = CTkButton(window, text="Back", width=80, command=lambda: [passTxt.destroy(), checkPass.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), account()])
+    backButton.place(x=25, y=404)
+
+    enterButton = CTkButton(window, text="Enter", width=80)
+    enterButton.place(x=225, y=200)
 
     exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
     exitButton.place(x=650, y=404)
@@ -36,7 +42,7 @@ def invalid():
 
 def account():
     welcomeText = CTkLabel(window, text="Welcome back!")
-    welcomeText.place(x=305, y=50)
+    welcomeText.pack(side=TOP, pady=75)
 
     changePassword = CTkButton(window, text="Change Password", width=120, command=lambda: [welcomeText.destroy(), changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), changePass1()])
     changePassword.place(x=315, y=175)
