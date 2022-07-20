@@ -11,8 +11,34 @@ set_appearance_mode("dark")
 
 set_default_color_theme("dark-blue")
 
+def changePass1():
+    passTxt = CTkLabel(window, text="Enter your password to verify it's you")
+    passTxt.place(x=200, y=50)
+
+    checkPass = CTkEntry(window, width=300)
+    checkPass.place(x=225, y=125)
+
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
+    exitButton.place(x=650, y=404)
+
+def invalid():
+    invalidText = CTkLabel(window, text="Username or password invalid")
+    invalidText.place(x=280, y=100)
+
+    tryAgain = CTkButton(window, text="Try Again", width=80, command=lambda: [invalidText.destroy(), tryAgain.destroy(), backButton.destroy(), exitButton.destroy(), loginSetup()])
+    tryAgain.place(x=335, y=175)
+
+    backButton = CTkButton(window, text="Back", width=80, command=lambda: [invalidText.destroy(), tryAgain.destroy(), backButton.destroy(), exitButton.destroy(), menu()])
+    backButton.place(x=25, y=404)
+
+    exitButton = CTkButton(text="Exit", width=80, command=window.destroy)
+    exitButton.place(x=650, y=404)
+
 def account():
-    changePassword = CTkButton(text="Change Password", width=120)
+    welcomeText = CTkLabel(window, text="Welcome back!")
+    welcomeText.place(x=305, y=50)
+
+    changePassword = CTkButton(window, text="Change Password", width=120, command=lambda: [welcomeText.destroy(), changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), changePass1()])
     changePassword.place(x=315, y=175)
 
     logoutButton = CTkButton(window, text="Log Out", width=80, command=lambda: [changePassword.destroy(), logoutButton.destroy(), exitButton.destroy(), menu()])
@@ -39,8 +65,10 @@ def login(username, password):
             account()
         else:
             print("Username or password invalid.")
+            invalid()
     else:
         print("Username or password invalid.")
+        invalid()
 
 def signUp(username, password):
     new_user_list = [username, ";", password, ";", "\n"]
