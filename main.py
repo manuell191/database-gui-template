@@ -10,9 +10,10 @@ database_dict = {
 
 }
 
-def printit(input1, input2):
-    print(input1)
-    print(input2)
+def signUp(username, password):
+    new_user_list = [username, ";", password, ";", "\n"]
+    f = open("database.txt", "a")
+    f.write("".join(new_user_list))
 
 def loginSetup():
     userText = Label(window, text="Username:")
@@ -30,7 +31,7 @@ def loginSetup():
     backButton = Button(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
     backButton.place(x=25, y=404)
 
-    enterButton = Button(window, text="Enter", width=10, command=lambda: [printit(userBox.get(), passBox.get())])
+    enterButton = Button(window, text="Enter", width=10, command=lambda: [signUp(userBox.get(), passBox.get())])
     enterButton.place(x=225, y=225)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
@@ -52,7 +53,7 @@ def signupSetup():
     backButton = Button(window, text="Back", width=10, command=lambda: [userText.destroy(), userBox.destroy(), passText.destroy(), passBox.destroy(), backButton.destroy(), enterButton.destroy(), exitButton.destroy(), menu()])
     backButton.place(x=25, y=404)
 
-    enterButton = Button(window, text="Enter", width=10, command=lambda: [printit(userBox.get(), passBox.get())])
+    enterButton = Button(window, text="Enter", width=10, command=lambda: [signUp(userBox.get(), passBox.get())])
     enterButton.place(x=225, y=225)
 
     exitButton = Button(text="Exit", width=10, command=window.destroy)
